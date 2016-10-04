@@ -1,16 +1,16 @@
-/******************************************************
-	This is the main for Project 3, which asks you to 
-    build a container that holds a list of college courses.
-    The courses are always kept in order, so they never need
-    to be sorted since they are always inserted in the order 
-    where they go. You will also need the files:
-	course.h
-	course.cc
-	node.h
-    in order to do this project. You will be writing both the .h
-    and the .cc file for the container.
-	John Dolan			Spring 2015
-**********************************************************/
+/** @file: collegemain.cc
+ * @brief: This is the main for Project 3, which asks you to 
+ *  build a container that holds a list of college courses.
+ *   The courses are always kept in order, so they never need
+ *  to be sorted since they are always inserted in the order 
+ *   where they go. You will also need the files:
+ * course.h
+ * course.cc
+ * node.h
+ * in order to do this project. You will be writing both the .h
+ * and the .cc file for the container.
+ * @author: John Dolan			
+ */
 
 #include <iostream>
 #include <fstream>
@@ -21,7 +21,7 @@
 
 using namespace std;
 
-// This function displays the menu and returns the user's choice
+/* This function displays the menu and returns the user's choice */
 int menu();
 
 int main(){
@@ -39,8 +39,7 @@ int main(){
 	cout<<"Now Enter Your Full name:";
 	while(cin.peek()=='\n')cin.ignore();
         getline(cin,fullname);
-        // Here you are calling a constructor that takes a string as a 
-        // parameter
+      
 	College mycollege(fullname);
         fin.open(filename.c_str());
     if(!fin.fail())
@@ -80,16 +79,16 @@ int main(){
 		acopy.display(cout);
 		cout<<"But your GPA is still really: "<<mycollege.gpa();
 		break;
-		} // the copy goes out of scope here - destructor runs
+		}
 	    case 0:
 		cout<<"Thank you for using course management.\n";
 		break;
 	    default:
 		cout<<"Not an option.\n";
 		break;
-	    } //bottom of the switch
+	    } 
 	    choice = menu();
-	}// bottom or the while loop, which is a senteniel loop
+	}
 
     fout.open(filename.c_str());
     if(!fout.fail())

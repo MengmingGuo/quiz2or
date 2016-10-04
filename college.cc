@@ -1,9 +1,8 @@
-//********************
-//Matthew Aberegg
-//Project 3
-//CS 2401
-//10/8/2015
-//********************
+/** @file: college.cc
+ * @author: Matthew Aberegg
+ * @date: 10/8/2015
+ */
+
 #include "college.h"
 #include<cstdlib>
 #include<iostream>
@@ -11,12 +10,14 @@
 #include<string>
 using namespace std;
 
+/* this function initialized the object */
+
 College::College(std::string s){
 	name = s;
 	head = NULL;
 }
 
-
+/* this function delete trush */
 College::~College(){
 	node * rmptr;
 	while(head != NULL){
@@ -26,6 +27,7 @@ College::~College(){
 	}
 }
 
+/* this is copy function */
 College::College(const College& other){
 	if(other.head == NULL){
 		head = NULL;

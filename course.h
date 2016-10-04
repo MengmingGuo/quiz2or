@@ -1,11 +1,11 @@
-/***********************************************************************8
-	This class stores the three essential features of a completed 
-	college course: the course number, the grade received, and the 
-	credit hours for the course. The get_number_grade will return the 
-	numeric equivalent of a letter grade as used in the standard 4 
-	point system.
-		John Dolan	School of EECS		Summer 2013
-************************************************************************/
+/** @file: course.h
+ * @brief: This class stores the three essential features of a completed 
+ * college course: the course number, the grade received, and the 
+ * credit hours for the course. The get_number_grade will return the 
+ * numeric equivalent of a letter grade as used in the standard 4 
+ * point system.
+ * @author: John Dolan	
+ */
 
 #include<iostream>
 #include<string>
@@ -15,10 +15,10 @@
 class course{
     public:
 	course();
-	// Input and output functions
+	
 	void input(std::istream& ins);
 	void output(std::ostream& outs)const;
-	// accessor functions
+	
 	std::string get_course_number()const{
 	    return course_number;
 	}
@@ -29,10 +29,10 @@ class course{
 	    return hours;
     	}
 	double get_number_grade()const;
-	// mutator function
+	
 	void set_course(std::string num, std::string grad, double hrs);
 
-	//COMPARISON OPERATORS - ORDERS LISTS BY THEIR COURSE NUMBERS
+	
 	bool operator < (const course& c)const{return course_number < c.course_number;}
         bool operator <= (const course& c)const{return course_number <= c.course_number;}
         bool operator > (const course& c)const{return course_number > c.course_number;}

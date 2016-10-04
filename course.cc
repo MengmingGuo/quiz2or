@@ -1,8 +1,8 @@
-/***********************************************************************
-	The implementation file for course.h, which describes a college
-	course.
-		John Dolan		School of EECS		Summer2013
-**************************************************************************/
+/** @file: course.cc
+ * @brief: The implementation file for course.h, which describes a college
+ * course.
+ * @author: John Dolan
+ */
 #include "course.h"
 #include<cstdlib>
 #include<iostream>
@@ -10,10 +10,12 @@
 #include<string>
 using namespace std;
 
+/* initialied the course */
 course::course(){
     hours = 0.0;
 }
 
+/* this is input function */
 void course::input(std::istream& ins){
     if(ins == cin){
 	cout<<"Course Number: ";
@@ -26,7 +28,7 @@ void course::input(std::istream& ins){
     	if(ins.eof()) return;
  	cout<<"Credit hours: ";
     	ins>>hours;
-	upper_course();   // makes all lower case letters into caps
+	upper_course();   
     }
     else{
     	if(ins.peek() == '\n') ins.ignore();
@@ -39,6 +41,7 @@ void course::input(std::istream& ins){
     }
 }
 
+/* this is output function */
 void course::output(std::ostream& outs)const{
     if(outs == cout){
 	outs<<"Course Number:"<<course_number<<endl;
